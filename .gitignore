@@ -1,0 +1,21 @@
+# Gradle
+.gradle/
+build/
+buildSrc/build/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.code-workspace
+
+# Run directories
+**/run/
+**/runs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated
+src/generated/
