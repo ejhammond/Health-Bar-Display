@@ -1,0 +1,49 @@
+{
+  "mobhealthbar.config.title": "Mob Health Bar Settings",
+
+  "mobhealthbar.category.visibility": "Visibility",
+  "mobhealthbar.category.appearance": "Appearance",
+  "mobhealthbar.category.more": "More Settings",
+  "mobhealthbar.category.distance": "Distance Scaling",
+
+  "mobhealthbar.option.enemy_on_look": "Enemies on Look",
+  "mobhealthbar.option.friendly_on_look": "Friendlies on Look",
+  "mobhealthbar.option.enemy_look_seconds": "Enemy Look Duration",
+  "mobhealthbar.option.friendly_look_seconds": "Friendly Look Duration",
+  "mobhealthbar.option.enemy_hit_seconds": "Enemy Hit Duration",
+  "mobhealthbar.option.friendly_hit_seconds": "Friendly Hit Duration",
+  "mobhealthbar.option.show_bosses": "Show Bosses",
+  "mobhealthbar.option.opacity": "Opacity",
+  "mobhealthbar.option.hide_vanilla_boss_bar": "Hide Vanilla Boss Bar",
+  "mobhealthbar.option.position": "Position",
+  "mobhealthbar.option.size": "Size",
+  "mobhealthbar.option.height_offset": "Height Offset",
+  "mobhealthbar.option.distance_scaling": "Scale With Distance",
+  "mobhealthbar.option.distance_scaling_amount": "Scaling Amount",
+
+  "mobhealthbar.position.above": "Above",
+  "mobhealthbar.position.middle": "Middle",
+  "mobhealthbar.position.feet": "At Feet",
+  "mobhealthbar.position.below": "Below",
+
+  "mobhealthbar.positioning.title": "Positioning & Size",
+
+  "mobhealthbar.special.title": "Large Mob Settings",
+  "mobhealthbar.special.ghast": "Ghast",
+  "mobhealthbar.special.happy_ghast": "Happy Ghast",
+  "mobhealthbar.special.elder_guardian": "Elder Guardian",
+
+  "mobhealthbar.mobs.title": "Per-Mob Toggles",
+  "mobhealthbar.mobs.search": "Search mobs...",
+  "mobhealthbar.mobs.none": "No mobs match your search",
+  "mobhealthbar.mobs.enable_all": "Enable All Mobs",
+
+  "mobhealthbar.reset": "Reset",
+  "mobhealthbar.reset_screen": "Reset These",
+  "mobhealthbar.reset_all": "Reset All",
+  "mobhealthbar.reset_all.title": "Reset all settings?",
+  "mobhealthbar.reset_all.message": "Every setting goes back to its default, including your per-mob toggles.",
+
+  "mobhealthbar.seconds": "%ss",
+  "key.mobhealthbar.open_config": "Open Config Screen"
+}

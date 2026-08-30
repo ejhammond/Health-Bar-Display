@@ -1,14 +1,13 @@
 {
   "schemaVersion": 1,
-  "id": "${mod_id}",
-  "version": "${mod_version}",
-  "name": "${mod_name}",
+  "id": "mobhealthbar",
+  "version": "1.0.0",
+  "name": "Mob Health Bar",
   "description": "Renders vanilla-style heart health bars above mob heads",
-  "authors": [
-    "${mod_author}"
-  ],
+  "icon": "assets/mobhealthbar/icon.png",
+  "authors": ["warwa"],
   "contact": {},
-  "license": "${mod_license}",
+  "license": "ARR",
   "environment": "client",
   "entrypoints": {
     "main": [
@@ -16,6 +15,9 @@
     ],
     "client": [
       "com.warwa.mobhealthbar.fabric.MobHealthBarFabricClient"
+    ],
+    "modmenu": [
+      "com.warwa.mobhealthbar.fabric.ModMenuIntegration"
     ]
   },
   "mixins": [
@@ -23,7 +25,7 @@
   ],
   "depends": {
     "fabricloader": ">=${fabric_loader_version}",
-    "minecraft": "${minecraft_version_range}",
+    "minecraft": "26.2",
     "java": ">=25",
     "fabric-api": "*"
   }

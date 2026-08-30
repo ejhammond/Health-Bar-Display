@@ -35,6 +35,11 @@ repositories {
         filter { includeGroupAndSubgroups('org.spongepowered') }
     }
     maven { url = uri('https://maven.blamejared.com') }
+    maven { url = uri('https://maven.terraformersmc.com/releases') }
+    exclusiveContent {
+        forRepository { maven { url = uri('https://maven.shedaniel.me/') } }
+        filter { includeGroupAndSubgroups('me.shedaniel') }
+    }
 }
 
 processResources {

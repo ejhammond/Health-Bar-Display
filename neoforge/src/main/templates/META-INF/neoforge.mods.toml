@@ -7,6 +7,7 @@ modId = "${mod_id}"
 version = "${mod_version}"
 displayName = "${mod_name}"
 authors = "warwa"
+logoFile = "assets/mobhealthbar/icon.png"
 description = '''Renders vanilla-style heart health bars above mob heads'''
 
 [[dependencies.${mod_id}]]

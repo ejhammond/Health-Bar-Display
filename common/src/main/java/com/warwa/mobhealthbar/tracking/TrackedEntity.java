@@ -24,22 +24,21 @@ public class TrackedEntity {
     private int damageTick = -1000; // tick when last damage occurred
     private int currentTick = 0;
 
-    public TrackedEntity(int entityId, boolean hostile) {
+    public TrackedEntity(int entityId, boolean hostile, int displayDuration) {
         this.entityId = entityId;
         this.hostile = hostile;
-        this.displayTicksRemaining = hostile
-                ? HealthBarConfig.HOSTILE_DISPLAY_DURATION
-                : HealthBarConfig.FRIENDLY_DISPLAY_DURATION;
+        this.displayTicksRemaining = displayDuration;
         this.fadeState = FadeState.FADING_IN;
         this.fadeProgress = 0.0f;
         this.fadeTicksInState = 0;
     }
 
-    public void refresh(boolean hostile) {
+    public void refresh(boolean hostile, int displayDuration) {
         this.hostile = hostile;
-        this.displayTicksRemaining = hostile
-                ? HealthBarConfig.HOSTILE_DISPLAY_DURATION
-                : HealthBarConfig.FRIENDLY_DISPLAY_DURATION;
+        // Never shorten an existing window: looking at a mob every tick must not
+        // drag down a longer hit timer (you have to look at a mob to hit it).
+        // The bar stays for the longer of the active reasons (look vs hit).
+        this.displayTicksRemaining = Math.max(this.displayTicksRemaining, displayDuration);
 
         if (fadeState == FadeState.FADING_OUT) {
             // Reverse the fade - smoothly go back to visible

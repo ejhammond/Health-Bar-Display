@@ -1,5 +1,6 @@
 package com.warwa.mobhealthbar.tracking;
 
+import com.warwa.mobhealthbar.config.HealthBarConfig;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
@@ -15,25 +16,24 @@ public final class EntityHealthTracker {
     private EntityHealthTracker() {}
 
     public void onEntityDamaged(int entityId, boolean isHostile) {
-        trackedEntities.compute(entityId, (id, existing) -> {
-            if (existing != null) {
-                existing.refresh(isHostile);
-                return existing;
-            }
-            return new TrackedEntity(entityId, isHostile);
-        });
+        HealthBarConfig cfg = HealthBarConfig.get();
+        int duration = isHostile ? cfg.enemyHitTicks() : cfg.friendlyHitTicks();
+        track(entityId, isHostile, duration);
     }
 
     public void onEntityLookedAt(int entityId, boolean isHostile) {
-        // Only show for hostile mobs when looking at them
-        if (!isHostile) return;
+        HealthBarConfig cfg = HealthBarConfig.get();
+        int duration = isHostile ? cfg.enemyLookTicks() : cfg.friendlyLookTicks();
+        track(entityId, isHostile, duration);
+    }
 
+    private void track(int entityId, boolean isHostile, int duration) {
         trackedEntities.compute(entityId, (id, existing) -> {
             if (existing != null) {
-                existing.refresh(isHostile);
+                existing.refresh(isHostile, duration);
                 return existing;
             }
-            return new TrackedEntity(entityId, isHostile);
+            return new TrackedEntity(entityId, isHostile, duration);
         });
     }
 

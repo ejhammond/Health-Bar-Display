@@ -15,6 +15,8 @@ public final class HostilityClassifier {
         if (entity instanceof Enemy) {
             return true;
         }
+        // Load-bearing, not a safety net: Sulfur Cube is MONSTER-category but does not
+        // implement Enemy, so it reaches here. Don't collapse this into the check above.
         return entity.getType().getCategory() == MobCategory.MONSTER;
     }
 

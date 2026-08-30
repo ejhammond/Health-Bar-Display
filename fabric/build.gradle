@@ -15,6 +15,16 @@ dependencies {
     // No mappings needed - MC 26.1 ships with real names
     implementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
     implementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+    // Mod Menu is an optional dependency. This project runs Loom with obfuscation disabled
+    // (MC 26.x ships real names), so plain compileOnly/localRuntime are correct - there are
+    // no modXxx remap configurations and none are needed.
+    compileOnly "com.terraformersmc:modmenu:${modmenu_version}"
+
+    // Present in the dev client only, never published: localRuntime stays out of the POM.
+    // Fabric Loader discovers these from the classpath by their fabric.mod.json, so no
+    // remapping step is involved.
+    localRuntime "com.terraformersmc:modmenu:${modmenu_version}"
+    localRuntime "me.shedaniel.cloth:cloth-config-fabric:${cloth_config_version}"
 }
 
 loom {
