@@ -27,7 +27,7 @@ public class MobHealthBarFabricClient implements ClientModInitializer {
         // Keybind (unbound by default) to open the config screen in-game
         openConfigKey = KeyMappingHelper.registerKeyMapping(new KeyMapping(
                 "key.mobhealthbar.open_config",
-                InputConstants.Type.KEYSYM,
+                InputConstants.Type.KEYBOARD,
                 InputConstants.UNKNOWN.getValue(),
                 KeyMapping.Category.MISC));
 

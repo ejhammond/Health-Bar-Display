@@ -116,7 +116,7 @@ public final class HealthBarRenderer {
 
         poseStack.pushPose();
         poseStack.translate(offsetX, anchorY, offsetZ);
-        poseStack.mulPose(cameraOrientation);
+        poseStack.mulPose(new Matrix4f().rotation(cameraOrientation));
 
         float scale = barScale * layout.shrink;
         poseStack.scale(scale, -scale, scale);
